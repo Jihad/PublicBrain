@@ -1,0 +1,6 @@
+# to exclude Obsidian's settings
+.obsidian/
+
+# to exclude OS settings and caches
+.trash/
+.DS_Store
