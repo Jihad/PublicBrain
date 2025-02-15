@@ -11,6 +11,6 @@ jobs:
     steps:
       - name: Trigger Coolify deployment
         run: |
-          curl -X POST -H "Content-Type: application/json" \
-            -d '{}' \
-            ${{ secrets.COOLIFY_DEPLOY_WEBHOOK_URL }}
+          curl -X GET ${{ secrets.COOLIFY_DEPLOY_WEBHOOK_URL }} \
+           -H "Content-Type: application/json" \
+           -H "authorization: ${{ secrets.COOLIFY_AUTH_KEY }}"
