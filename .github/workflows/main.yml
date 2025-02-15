@@ -1,0 +1,16 @@
+name: Trigger Coolify Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  trigger-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Coolify deployment
+        run: |
+          curl -X POST -H "Content-Type: application/json" \
+            -d '{}' \
+            ${{ secrets.COOLIFY_DEPLOY_WEBHOOK_URL }}
